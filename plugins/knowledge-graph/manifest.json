@@ -1,0 +1,21 @@
+{
+  "id": "knowledge-graph",
+  "name": "知识图谱",
+  "version": "0.2.0",
+  "description": "从文本、笔记或对话中提取概念与关系，生成本地知识图谱。",
+  "trust": "full-access",
+  "hidden": false,
+  "contributes": {
+    "page": {
+      "title": {
+        "zh": "知识图谱",
+        "zh-TW": "知識圖譜",
+        "en": "Knowledge Graph",
+        "ja": "ナレッジグラフ",
+        "ko": "지식 그래프"
+      },
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"6\" cy=\"6\" r=\"3\"/><circle cx=\"18\" cy=\"7\" r=\"3\"/><circle cx=\"12\" cy=\"18\" r=\"3\"/><path d=\"M8.7 7.6 15.3 5.4\"/><path d=\"M7.7 8.5 10.3 15.5\"/><path d=\"M16.3 9.4 13.7 15.5\"/></svg>",
+      "route": "/page"
+    }
+  }
+}

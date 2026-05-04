@@ -1,0 +1,237 @@
+{
+  "name": "hanako",
+  "version": "0.124.4",
+  "type": "module",
+  "description": "Hanako - a personal AI agent with memory and soul",
+  "homepage": "https://github.com/KSKOOO/openhanako-forlinux",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "liliMozi"
+  },
+  "keywords": [
+    "ai-agent",
+    "electron",
+    "memory",
+    "multi-platform",
+    "telegram",
+    "personal-assistant"
+  ],
+  "main": "desktop/main.cjs",
+  "desktopName": "hanako.desktop",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "npm run build:preload && npm run build:renderer && npm run build:theme && node scripts/launch.js electron",
+    "start:dev": "npm run build:preload && npm run build:renderer && npm run build:theme && node scripts/launch.js electron-dev",
+    "start:vite": "npm run build:preload && node scripts/launch.js electron-vite",
+    "dev:renderer": "vite --config vite.config.ts",
+    "build:renderer": "vite build --config vite.config.ts",
+    "build:theme": "vite build --config vite.config.theme.js",
+    "build:preload": "vite build --config vite.config.preload.js",
+    "typecheck": "tsc --noEmit",
+    "cli": "node scripts/launch.js cli",
+    "server": "node scripts/launch.js server",
+    "build:main": "vite build --config vite.config.main.js",
+    "build:computer-use-helper": "node scripts/build-computer-use-helper.mjs",
+    "build:client": "npm run build:main && npm run build:preload && npm run build:renderer && npm run build:theme",
+    "generate:windows-icon": "node scripts/generate-windows-icon.cjs",
+    "pack": "npm run build:computer-use-helper && npm run build:server && npm run build:client && electron-builder --dir",
+    "install:local": "npm run pack && rm -rf /Applications/Hanako.app && cp -R dist/mac-arm64/Hanako.app /Applications/ && printf 'provider: github\\nowner: liliMozi\\nrepo: openhanako\\n' > /Applications/Hanako.app/Contents/Resources/app-update.yml && node scripts/sign-local.cjs",
+    "dist": "npm run build:computer-use-helper && npm run build:server && npm run build:client && electron-builder --mac dmg",
+    "dist:win": "npm run build:computer-use-helper && npm run generate:windows-icon && npm run build:server && npm run build:client && electron-builder --win nsis",
+    "pack:linux": "npm run build:server:linux && npm run build:client && electron-builder --linux dir --x64 --publish never",
+    "package:linux": "node scripts/package-linux-desktop.mjs --all",
+    "dist:linux": "npm run build:server:linux && npm run build:client && electron-builder --linux dir --x64 --publish never && npm run package:linux",
+    "dist:linux:tar": "npm run build:server:linux && npm run build:client && electron-builder --linux dir --x64 --publish never && node scripts/package-linux-desktop.mjs --tar",
+    "dist:linux:deb": "npm run build:server:linux && npm run build:client && electron-builder --linux dir --x64 --publish never && node scripts/package-linux-desktop.mjs --deb",
+    "dist:linux:appimage": "npm run build:server:linux && npm run build:client && electron-builder --linux AppImage --x64 --publish never",
+    "mobile:install": "npm --prefix mobile-android install",
+    "mobile:dev": "npm --prefix mobile-android run dev",
+    "mobile:build": "npm --prefix mobile-android run build",
+    "mobile:sync": "npm --prefix mobile-android run cap:sync",
+    "mobile:build:apk": "node scripts/build-mobile-capacitor-apk.mjs",
+    "test": "vitest run",
+    "build:server": "node scripts/build-server.mjs",
+    "build:server:linux": "node scripts/build-server.mjs linux x64",
+    "lint": "eslint desktop/src/ server/",
+    "test:watch": "vitest",
+    "postinstall": "node scripts/patch-pi-sdk.cjs"
+  },
+  "dependencies": {
+    "@codemirror/lang-markdown": "^6.5.0",
+    "@codemirror/language-data": "^6.5.2",
+    "@floating-ui/dom": "^1.7.6",
+    "@hono/node-server": "^1.19.11",
+    "@hono/node-ws": "^1.3.0",
+    "@larksuiteoapi/node-sdk": "^1.59.0",
+    "@mariozechner/pi-ai": "0.70.5",
+    "@mariozechner/pi-coding-agent": "0.70.2",
+    "@tiptap/core": "^3.22.0",
+    "@tiptap/extension-placeholder": "^3.22.0",
+    "@tiptap/pm": "^3.22.0",
+    "@tiptap/react": "^3.22.0",
+    "@tiptap/starter-kit": "^3.22.0",
+    "@traptitech/markdown-it-katex": "^3.6.0",
+    "better-sqlite3": "^12.6.2",
+    "chokidar": "^5.0.0",
+    "codemirror": "^6.0.2",
+    "duck-duck-scrape": "^2.2.7",
+    "electron-updater": "^6.8.3",
+    "exceljs": "^4.4.0",
+    "extract-zip": "^2.0.1",
+    "hono": "^4.12.9",
+    "jsdom": "^29.0.2",
+    "js-yaml": "^4.1.0",
+    "katex": "^0.16.39",
+    "mammoth": "^1.11.0",
+    "markdown-it": "^14.1.1",
+    "markdown-it-task-lists": "^2.1.1",
+    "node-telegram-bot-api": "^0.67.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typebox": "1.1.34",
+    "ws": "^8.18.0",
+    "zustand": "^5.0.11"
+  },
+  "overrides": {
+    "form-data": "^4.0.0",
+    "qs": "^6.14.1",
+    "tough-cookie": "^4.1.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/markdown-it": "^14.1.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vercel/nft": "^1.5.0",
+    "@vitejs/plugin-react": "^5.1.4",
+    "electron": "^38.8.4",
+    "electron-builder": "^26.8.1",
+    "esbuild": "^0.27.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "patch-package": "^8.0.1",
+    "pngjs": "^5.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.2",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18"
+  },
+  "build": {
+    "appId": "com.hanako.app",
+    "productName": "Hanako",
+    "asar": true,
+    "asarUnpack": [
+      "desktop/src/icon.ico",
+      "desktop/src/icon.png",
+      "desktop/src/assets/tray*.ico",
+      "desktop/src/assets/tray*.png",
+      "desktop/src/tray*.ico"
+    ],
+    "afterPack": "./scripts/fix-modules.cjs",
+    "extraMetadata": {
+      "main": "desktop/main.bundle.cjs"
+    },
+    "files": [
+      "desktop/main.bundle.cjs",
+      "desktop/preload.bundle.cjs",
+      "desktop/dist-renderer/**",
+      "desktop/src/**/*.{html,icns,ico,png,svg,json}",
+      "desktop/src/assets/**",
+      "package.json",
+      "!**/node_modules/**",
+      "node_modules/ws/**"
+    ],
+    "extraResources": [
+      {
+        "from": "dist-server/${os}-${arch}/",
+        "to": "server/"
+      },
+      {
+        "from": "desktop/src/screenshot-themes/",
+        "to": "screenshot-themes/"
+      }
+    ],
+    "afterSign": "./scripts/notarize.cjs",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.productivity",
+      "icon": "desktop/src/icon.icns",
+      "artifactName": "${productName}-${version}-macOS-${arch}.${ext}",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "desktop/entitlements.mac.plist",
+      "entitlementsInherit": "desktop/entitlements.mac.plist",
+      "extraResources": [
+        {
+          "from": "dist-computer-use/mac-${arch}/",
+          "to": "computer-use/macos/"
+        }
+      ]
+    },
+    "dmg": {
+      "title": "Hanako",
+      "contents": [
+        {
+          "x": 180,
+          "y": 220
+        },
+        {
+          "x": 420,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "KSKOOO",
+        "repo": "openhanako-forlinux"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "desktop/src/icon.ico",
+      "artifactName": "${productName}-${version}-Windows-${arch}.${ext}",
+      "requestedExecutionLevel": "asInvoker",
+      "extraResources": [
+        {
+          "from": "vendor/git-portable",
+          "to": "git"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "tar.gz"
+      ],
+      "category": "Utility",
+      "icon": "desktop/src/icon.png",
+      "executableName": "hanako",
+      "desktop": {
+        "entry": {
+          "StartupWMClass": "hanako",
+          "X-GNOME-WMClass": "hanako"
+        }
+      },
+      "maintainer": "liliMozi <noreply@example.com>",
+      "artifactName": "${productName}-${version}-Linux-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "include": "build/installer.nsh",
+      "installerIcon": "desktop/src/icon.ico",
+      "uninstallerIcon": "desktop/src/icon.ico"
+    }
+  }
+}

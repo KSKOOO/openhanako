@@ -1,0 +1,27 @@
+{
+  "name": "hanako-capacitor-android",
+  "private": true,
+  "version": "0.4.0",
+  "type": "module",
+  "description": "Standalone Android port of Hanako built with React, Vite and Capacitor",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "cap:sync": "capacitor sync android",
+    "android:debug": "capacitor build android --debug"
+  },
+  "dependencies": {
+    "@capacitor/android": "7.6.2",
+    "@capacitor/core": "7.6.2",
+    "@capacitor/filesystem": "7.1.8",
+    "@capacitor/share": "7.0.4",
+    "@vitejs/plugin-react": "^5.1.4",
+    "vite": "^7.3.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "7.6.2"
+  }
+}

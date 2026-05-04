@@ -1,0 +1,94 @@
+{
+  "id": "openmontage",
+  "name": "OpenMontage",
+  "version": "0.1.0",
+  "description": "OpenMontage video-production runtime bridge",
+  "trust": "full-access",
+  "hidden": true,
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "runtimeCommand": {
+          "type": "string",
+          "title": "OpenMontage Runtime Command"
+        },
+        "runtimeArgsTemplate": {
+          "type": "string",
+          "title": "OpenMontage Runtime Args Template"
+        },
+        "agentCommand": {
+          "type": "string",
+          "title": "OpenMontage Agent Command"
+        },
+        "agentArgsTemplate": {
+          "type": "string",
+          "title": "OpenMontage Agent Args Template"
+        },
+        "openMontageRoot": {
+          "type": "string",
+          "title": "OpenMontage Repository Root"
+        },
+        "demoName": {
+          "type": "string",
+          "title": "OpenMontage Demo Name"
+        },
+        "agentBackend": {
+          "type": "string",
+          "title": "OpenMontage Agent Backend"
+        },
+        "mode": {
+          "type": "string",
+          "title": "OpenMontage Default Mode"
+        },
+        "fastMode": {
+          "type": "boolean",
+          "title": "OpenMontage Fast Mode"
+        },
+        "pipeline": {
+          "type": "string",
+          "title": "OpenMontage Default Pipeline"
+        },
+        "videoProvider": {
+          "type": "string",
+          "title": "OpenMontage Video Provider"
+        },
+        "videoModel": {
+          "type": "string",
+          "title": "OpenMontage Video Model"
+        },
+        "videoApiKey": {
+          "type": "string",
+          "title": "OpenMontage Video API Key"
+        },
+        "videoBaseUrl": {
+          "type": "string",
+          "title": "OpenMontage Video Base URL"
+        },
+        "videoResolution": {
+          "type": "string",
+          "title": "OpenMontage Default Resolution"
+        },
+        "providerEnvOverridesJson": {
+          "type": "string",
+          "title": "OpenMontage Provider Env Overrides JSON"
+        },
+        "directRemotionRenderer": {
+          "type": "string",
+          "title": "OpenMontage Direct Renderer"
+        },
+        "directRemotionTimeoutMs": {
+          "type": "number",
+          "title": "OpenMontage Direct Remotion Timeout (ms)"
+        },
+        "directRemotionPreflightMs": {
+          "type": "number",
+          "title": "OpenMontage Direct Remotion Preflight Timeout (ms)"
+        },
+        "runtimeTimeoutMs": {
+          "type": "number",
+          "title": "OpenMontage Runtime Timeout (ms)"
+        }
+      }
+    }
+  }
+}

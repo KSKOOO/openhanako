@@ -1,0 +1,358 @@
+{
+  "_comment": "供应商分区未命中时使用的通用模型参考值。它是 unknown/custom provider 的 best-effort baseline，不覆盖 provider-specific known-models.json 条目，也不覆盖用户显式填写的模型字段。",
+  "claude-opus-4-7": {
+    "name": "Claude Opus 4.7",
+    "context": 1000000,
+    "maxOutput": 128000,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "claude-opus-4-6": {
+    "name": "Claude Opus 4.6",
+    "context": 200000,
+    "maxOutput": 128000,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "claude-sonnet-4-6": {
+    "name": "Claude Sonnet 4.6",
+    "context": 200000,
+    "maxOutput": 64000,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "deepseek-v4-pro": {
+    "name": "DeepSeek V4 Pro",
+    "context": 1000000,
+    "maxOutput": 384000,
+    "image": false,
+    "reasoning": true,
+    "xhigh": true
+  },
+  "deepseek-v4-flash": {
+    "name": "DeepSeek V4 Flash",
+    "context": 1000000,
+    "maxOutput": 384000,
+    "image": false,
+    "reasoning": true,
+    "xhigh": true
+  },
+  "gemini-3.1-pro-preview": {
+    "name": "Gemini 3.1 Pro Preview",
+    "context": 1048576,
+    "maxOutput": 65536,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": false,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "yxyx",
+      "outputFormat": "gemini",
+      "groundingMode": "native"
+    }
+  },
+  "glm-5.1": {
+    "name": "GLM-5.1",
+    "context": 200000,
+    "maxOutput": 128000,
+    "image": false,
+    "reasoning": true
+  },
+  "glm-5v-turbo": {
+    "name": "GLM-5V Turbo",
+    "context": 200000,
+    "maxOutput": 128000,
+    "image": true,
+    "reasoning": true
+  },
+  "gpt-5.4": {
+    "name": "GPT-5.4",
+    "context": 1050000,
+    "maxOutput": 128000,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "gpt-5.4-mini": {
+    "name": "GPT-5.4 Mini",
+    "context": 400000,
+    "maxOutput": 128000,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "gpt-5.4-nano": {
+    "name": "GPT-5.4 Nano",
+    "context": 400000,
+    "maxOutput": 128000,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "gpt-5.5": {
+    "name": "GPT-5.5",
+    "context": 1050000,
+    "maxOutput": 128000,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "grok-4.20-multi-agent": {
+    "name": "Grok 4.20 Multi Agent",
+    "context": 2000000,
+    "maxOutput": 2000000,
+    "image": true,
+    "reasoning": true
+  },
+  "grok-4.20-reasoning": {
+    "name": "Grok 4.20 Reasoning",
+    "context": 2000000,
+    "maxOutput": 2000000,
+    "image": true,
+    "reasoning": true
+  },
+  "grok-4.20-non-reasoning": {
+    "name": "Grok 4.20 Non Reasoning",
+    "context": 2000000,
+    "maxOutput": 2000000,
+    "image": true
+  },
+  "kimi-k2.6": {
+    "name": "Kimi K2.6",
+    "context": 262144,
+    "maxOutput": 98304,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "anchor",
+      "groundingMode": "prompted"
+    }
+  },
+  "labs-leanstral-2603": {
+    "name": "Labs Leanstral 2603",
+    "context": 256000,
+    "maxOutput": 256000,
+    "reasoning": true
+  },
+  "minimax-m2.7": {
+    "name": "MiniMax M2.7",
+    "context": 204800,
+    "maxOutput": 204800,
+    "image": true,
+    "reasoning": true
+  },
+  "minimax-m2.7-highspeed": {
+    "name": "MiniMax M2.7 High Speed",
+    "context": 204800,
+    "maxOutput": 204800,
+    "image": true,
+    "reasoning": true
+  },
+  "mistral-small-2603": {
+    "name": "Mistral Small 4 2603",
+    "context": 256000,
+    "maxOutput": 256000,
+    "reasoning": true
+  },
+  "qwen3-vl-plus": {
+    "name": "Qwen3 Vl Plus",
+    "context": 260096,
+    "maxOutput": 32768,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  },
+  "qwen3-vl-235b-a22b-instruct": {
+    "name": "Qwen3 Vl 235b A22b Instruct",
+    "context": 131072,
+    "maxOutput": 32768,
+    "image": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  },
+  "qwen3-vl-235b-a22b-thinking": {
+    "name": "Qwen3 Vl 235b A22b Thinking",
+    "context": 131072,
+    "maxOutput": 32768,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  },
+  "qwen3-vl-32b-instruct": {
+    "name": "Qwen3 Vl 32b Instruct",
+    "context": 131072,
+    "maxOutput": 32768,
+    "image": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  },
+  "qwen3-vl-32b-thinking": {
+    "name": "Qwen3 Vl 32b Thinking",
+    "context": 131072,
+    "maxOutput": 32768,
+    "image": true,
+    "reasoning": true,
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  },
+  "qwen3.6-plus": {
+    "name": "Qwen 3.6 Plus",
+    "context": 1000000,
+    "maxOutput": 65536,
+    "image": true,
+    "reasoning": true,
+    "quirks": [
+      "enable_thinking"
+    ],
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  },
+  "qwen3.6-flash": {
+    "name": "Qwen 3.6 Flash",
+    "context": 131072,
+    "maxOutput": 8192,
+    "image": true,
+    "reasoning": true,
+    "quirks": [
+      "enable_thinking"
+    ],
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  },
+  "qwen3.6-max-preview": {
+    "name": "Qwen 3.6 Max Preview",
+    "context": 1000000,
+    "maxOutput": 65536,
+    "image": true,
+    "reasoning": true,
+    "quirks": [
+      "enable_thinking"
+    ],
+    "visionCapabilities": {
+      "grounding": true,
+      "boxes": true,
+      "points": true,
+      "coordinateSpace": "norm-1000",
+      "boxOrder": "xyxy",
+      "outputFormat": "qwen",
+      "groundingMode": "native"
+    }
+  }
+}

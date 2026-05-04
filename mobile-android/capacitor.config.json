@@ -1,0 +1,19 @@
+{
+  "appId": "io.github.kskooo.openhanako.mobile",
+  "appName": "Hanako Mobile",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 300,
+      "backgroundColor": "#F4F0E4",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    }
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
+}

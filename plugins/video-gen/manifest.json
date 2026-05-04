@@ -1,0 +1,80 @@
+{
+  "id": "video-gen",
+  "name": "视频生成",
+  "version": "1.0.0",
+  "description": "使用AI生成视频，支持多种在线API和本地ComfyUI",
+  "trust": "full-access",
+  "minAppVersion": "0.82.0",
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["runway", "pika", "kling", "comfyui", "custom"],
+          "default": "runway",
+          "title": "视频生成服务",
+          "description": "选择使用的视频生成服务"
+        },
+        "runwayApiKey": {
+          "type": "string",
+          "default": "",
+          "title": "Runway API Key",
+          "description": "Runway ML API密钥"
+        },
+        "pikaApiKey": {
+          "type": "string",
+          "default": "",
+          "title": "Pika API Key",
+          "description": "Pika Labs API密钥"
+        },
+        "klingApiKey": {
+          "type": "string",
+          "default": "",
+          "title": "Kling API Key",
+          "description": "可灵AI API密钥"
+        },
+        "comfyuiUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8188",
+          "title": "ComfyUI URL",
+          "description": "ComfyUI服务地址"
+        },
+        "customApiUrl": {
+          "type": "string",
+          "default": "",
+          "title": "自定义API URL",
+          "description": "自定义视频生成API地址"
+        },
+        "customApiKey": {
+          "type": "string",
+          "default": "",
+          "title": "自定义API Key",
+          "description": "自定义API密钥"
+        },
+        "defaultDuration": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 30,
+          "title": "默认视频时长（秒）",
+          "description": "生成视频的默认时长"
+        },
+        "defaultResolution": {
+          "type": "string",
+          "enum": ["720p", "1080p", "4k"],
+          "default": "1080p",
+          "title": "默认分辨率",
+          "description": "生成视频的默认分辨率"
+        },
+        "maxConcurrent": {
+          "type": "number",
+          "default": 2,
+          "minimum": 1,
+          "maximum": 10,
+          "title": "最大并发任务数",
+          "description": "同时进行的最大视频生成任务数"
+        }
+      }
+    }
+  }
+}

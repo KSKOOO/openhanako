@@ -1,0 +1,42 @@
+{
+  "id": "image-gen",
+  "name": "Image Generation",
+  "version": "0.1.0",
+  "description": "多媒体生成：图片、语音、音乐，支持火山引擎、OpenAI、ComfyUI、MiniMax",
+  "trust": "full-access",
+  "hidden": true,
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "defaultImageModel": {
+          "type": "object",
+          "title": "默认图片模型",
+          "properties": {
+            "id": { "type": "string" },
+            "provider": { "type": "string" }
+          }
+        },
+        "defaultAudioModel": {
+          "type": "object",
+          "title": "默认语音模型",
+          "properties": {
+            "id": { "type": "string" },
+            "provider": { "type": "string" }
+          }
+        },
+        "defaultMusicModel": {
+          "type": "object",
+          "title": "默认音乐模型",
+          "properties": {
+            "id": { "type": "string" },
+            "provider": { "type": "string" }
+          }
+        },
+        "providerDefaults": {
+          "type": "object",
+          "title": "per-provider 默认参数"
+        }
+      }
+    }
+  }
+}
